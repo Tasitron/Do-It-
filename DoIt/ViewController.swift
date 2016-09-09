@@ -52,6 +52,10 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     @IBAction func addButton(_ sender: AnyObject) {
         performSegue(withIdentifier: "addSegue", sender: nil)
     }
-    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let nextVC = segue.destination as!
+            createTaskViewController
+        nextVC.previousVC = self
+    }
 }
 
